@@ -24,7 +24,7 @@ func handlerFunc(f func(http.ResponseWriter, *http.Request)) (string, error) {
 		return "", fmt.Errorf("err %s", err)
 	}
 	if res.StatusCode != 200 {
-		return "", fmt.Errorf(" a response code is not 200")
+		return "", fmt.Errorf("a response code is not 200")
 	}
 
 	return string(rbody), nil
@@ -38,7 +38,7 @@ func TestRoot(t *testing.T) {
 	}
 
 	if string(root) != "Hello world!" {
-		t.Error("a response is not Hello world!: %v", root)
+		t.Errorf("a response is not Hello world!: %v", root)
 	}
 }
 
