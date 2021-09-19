@@ -37,8 +37,8 @@ func TestRoot(t *testing.T) {
 		t.Errorf("err: %v", err)
 	}
 
-	if string(root) != "Hello world!" {
-		t.Errorf("a response is not Hello world!: %v", root)
+	if string(root) != "Hello world! Welcome Go App!" {
+		t.Errorf("a response is not Hello world! Welcome Go App!: %v", root)
 	}
 }
 
