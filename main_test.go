@@ -8,7 +8,6 @@ import (
 	"testing"
 )
 
-
 func handlerFunc(f func(http.ResponseWriter, *http.Request)) (string, error) {
 	s := httptest.NewServer(http.HandlerFunc(f))
 	defer s.Close()
