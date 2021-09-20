@@ -15,6 +15,7 @@ import (
 
 var DB *sql.DB
 
+// DB への接続
 func connectDB() (*sql.DB, error){
     dbUser := os.Getenv("DB_USER")
     dbPass := os.Getenv("DB_PASS")
@@ -30,6 +31,7 @@ func connectDB() (*sql.DB, error){
     return db, nil
 }
 
+// マイグレーションの実行
 func migration() error {
     log.Println("start migration")
     driver, err := mysql.WithInstance(DB, &mysql.Config{})
@@ -82,6 +84,7 @@ func main() {
     DB = db
     defer DB.Close()
 
+    // サブコマンドでアプリケーションの実行とマイグレーションの実行を分けている
     switch os.Args[1] {
     case "start":
         http.HandleFunc("/", RootHandler)
