@@ -16,7 +16,7 @@
     {
       "containerName": "sample-webapp",
       "containerPort": 8080,
-      "targetGroupArn": "arn:aws:elasticloadbalancing:ap-northeast-1:455357186203:targetgroup/sample-http/44fa004c05fb8469"
+      "targetGroupArn": "arn:aws:elasticloadbalancing:ap-northeast-1:455357186203:targetgroup/sample-http/190f0a550d1a6d98"
     }
   ],
   "placementConstraints": [],
