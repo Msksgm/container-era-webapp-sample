@@ -15,8 +15,6 @@ import (
 	_ "github.com/golang-migrate/migrate/source/file"
 )
 
-// HTMLファイルを embed するためのコード
-// go:embed index.html
 var f embed.FS
 
 var DB *sql.DB
@@ -102,6 +100,7 @@ func PostHandler(w http.ResponseWriter, r *http.Request) {
     }
     defer rows.Close()
     http.Redirect(w, r, "/", 302)
+
 }
 
 func HealthCheck(w http.ResponseWriter, r *http.Request)  {
