@@ -51,5 +51,6 @@
   "networkMode": "bridge",
   "placementConstraints": [],
   "taskRoleArn": "arn:aws:iam::455357186203:role/sample-ecs-task-role",
+  "executionRoleArn": "arn:aws:iam::455357186203:role/sample-ecs-task-role",
   "volumes": []
 }
