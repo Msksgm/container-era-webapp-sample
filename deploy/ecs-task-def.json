@@ -26,7 +26,25 @@
           "protocol": "tcp"
         }
       ],
-      "volumesFrom": []
+      "volumesFrom": [],
+      "secrets": [
+        {
+          "name": "DB_HOST",
+          "valueFrom": "/sample/DB_HOST"
+        },
+        {
+          "name": "DB_USER",
+          "valueFrom": "/sample/DB_USER"
+        },
+        {
+          "name": "DB_PASS",
+          "valueFrom": "/sample/DB_PASS"
+        },
+        {
+          "name": "DB_NAME",
+          "valueFrom": "/sample/DB_NAME"
+        }
+      ]
     }
   ],
   "family": "sample-service",

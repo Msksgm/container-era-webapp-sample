@@ -2,6 +2,8 @@ FROM golang:1.16.4-alpine as dev
 
 WORKDIR /app
 
+RUN apk add --no-cache mysql-client
+
 COPY . .
 
 CMD [ "go", "run", "main.go"]
