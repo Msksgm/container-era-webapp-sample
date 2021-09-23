@@ -22,6 +22,8 @@ WORKDIR /app
 
 COPY --from=build /build/test-go-app .
 
+RUN apk add --no-cache mysql-client
+
 RUN addgroup go \
     && adduser -D -G go go \
     && chown -R go:go /app/test-go-app
