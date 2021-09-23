@@ -42,3 +42,9 @@ jobs:
       - name: deploy
         run: |
           ecspresso deploy --config deploy/config.yaml
+      - name: migrate with ecspresso
+        run: |
+          ecspresso run --config=./deploy/config.yaml --watch-container=sa mple-webapp --task-def=./deploy/migrate-task-def.json
+      - name: deploy with ecspresso
+        run: |
+          ecspresso deploy --config=./deploy/config.yaml
