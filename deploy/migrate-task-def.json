@@ -1,0 +1,54 @@
+{
+  "containerDefinitions": [
+    {
+      "command": ["./test-go-app", "migrate"],
+      "cpu": 333,
+      "environment": [],
+      "essential": true,
+      "image": "455357186203.dkr.ecr.ap-northeast-1.amazonaws.com/sample-image:latest",
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "sample-service",
+          "awslogs-region": "ap-northeast-1",
+          "awslogs-stream-prefix": "service"
+        }
+      },
+      "memoryReservation": 600,
+      "mountPoints": [],
+      "name": "sample-webapp",
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 0,
+          "protocol": "tcp"
+        }
+      ],
+      "volumesFrom": [],
+      "secrets": [
+        {
+          "name": "DB_HOST",
+          "valueFrom": "/sample/DB_HOST"
+        },
+        {
+          "name": "DB_USER",
+          "valueFrom": "/sample/DB_USER"
+        },
+        {
+          "name": "DB_PASS",
+          "valueFrom": "/sample/DB_PASS"
+        },
+        {
+          "name": "DB_NAME",
+          "valueFrom": "/sample/DB_NAME"
+        }
+      ]
+    }
+  ],
+  "family": "sample-service",
+  "networkMode": "bridge",
+  "placementConstraints": [],
+  "taskRoleArn": "arn:aws:iam::455357186203:role/sample-ecs-task-role",
+  "executionRoleArn": "arn:aws:iam::455357186203:role/sample-ecs-task-role",
+  "volumes": []
+}
