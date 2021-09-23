@@ -39,9 +39,6 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$TAG"
-      - name: deploy
-        run: |
-          ecspresso deploy --config deploy/config.yaml
       - name: migrate with ecspresso
         run: |
           ecspresso run --config=./deploy/config.yaml --watch-container=sample-webapp --task-def=./deploy/migrate-task-def.json
